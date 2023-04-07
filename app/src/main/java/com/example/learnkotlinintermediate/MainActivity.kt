@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
         val repository = Respositry()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-        viewModel.pushPost2(2, 2, "My Title", "My Text")
+        viewModel.getPost("123456789")
         viewModel.myCustomPosts.observe(this) { response ->
            if (response.isSuccessful) {
                Log.d("Main", response.body().toString())
                Log.d("Main", response.code().toString())
-               Log.d("Main", response.toString())
+               Log.d("Main", response.headers().toString())
            } else {
                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
            }
