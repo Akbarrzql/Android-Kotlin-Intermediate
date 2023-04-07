@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.learnkotlinintermediate.adapter.MyAdapter
 import com.example.learnkotlinintermediate.databinding.ActivityMainBinding
+import com.example.learnkotlinintermediate.model.Post
 import com.example.learnkotlinintermediate.repository.Respositry
 
 class MainActivity : AppCompatActivity() {
@@ -27,10 +28,12 @@ class MainActivity : AppCompatActivity() {
         val repository = Respositry()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getCustomPosts(2, "id", "desc")
+        viewModel.pushPost2(2, 2, "My Title", "My Text")
         viewModel.myCustomPosts.observe(this) { response ->
            if (response.isSuccessful) {
-               response.body()?.let { myAdapter.setData(it) }
+               Log.d("Main", response.body().toString())
+               Log.d("Main", response.code().toString())
+               Log.d("Main", response.toString())
            } else {
                Toast.makeText(this, response.code(), Toast.LENGTH_SHORT).show()
            }
