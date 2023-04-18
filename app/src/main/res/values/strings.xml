@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Learn Kotlin Intermediate</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiYWtiYXJyenFsMDgiLCJhIjoiY2wxOWRjNDZxMW42dDNpcXpxb25naTBwYSJ9.3NYl3D315S94wHjSLoQCrw</string>
 </resources>
