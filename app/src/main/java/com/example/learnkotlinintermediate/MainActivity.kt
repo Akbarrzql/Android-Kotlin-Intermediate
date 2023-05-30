@@ -17,12 +17,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        MapStyle()
+        OnClick()
+
+
+    }
+
+    private fun OnClick(){
         binding.fabAdd.setOnClickListener {
             MyBottomSheetDialogFragment().apply {
                 show(supportFragmentManager, tag)
             }
         }
-
     }
 
     private fun MapStyle(){
