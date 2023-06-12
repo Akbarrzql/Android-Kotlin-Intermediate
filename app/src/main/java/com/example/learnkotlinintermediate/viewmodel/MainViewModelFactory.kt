@@ -1,4 +1,4 @@
-package com.example.learnkotlinintermediate
+package com.example.learnkotlinintermediate.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

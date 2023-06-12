@@ -6,7 +6,7 @@ import retrofit2.Response
 
 class Respositry {
 
-        suspend fun getPost(auth: String) : Response<Post>{
+    suspend fun getPost(auth: String) : Response<Post>{
         return  RetrofitInstance.api.getPost(auth)
     }
 
